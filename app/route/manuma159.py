@@ -10,7 +10,8 @@ templates = Jinja2Templates(directory='views/templates')
 manuma159_router.mount('/static', StaticFiles(directory='views/static'), name='static')
 
 
+
 @manuma159_router.get("/hello", response_class=HTMLResponse)
-async def index(req: Request):
+async def manuma159(req: Request):
     return templates.TemplateResponse(
         'manuma159/hello.html', {'request': req})
