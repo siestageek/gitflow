@@ -4,6 +4,10 @@ from starlette.templating import Jinja2Templates
 
 from app.route.index import index_router
 from app.route.manuma159 import manuma159_router
+from app.route.redraoh import redraoh_router
+from app.route.jjh920 import jjh920_router
+from app.route.zzyzzy import zzyzzy_router
+
 
 app = FastAPI()
 
@@ -13,7 +17,13 @@ app.mount('/static', StaticFiles(directory='views/static'), name='static')
 
 # 외부 route 파일 불러오기
 app.include_router(index_router)
+
 app.include_router(manuma159_router, prefix='/manuma159')
+
+app.include_router(redraoh_router, prefix='/redraoh')
+app.include_router(jjh920_router, prefix='/jjh920')
+app.include_router(zzyzzy_router, prefix='/zzyzzy')
+
 
 
 if __name__ == '__main__':
