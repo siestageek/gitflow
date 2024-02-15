@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
+from app.route.bamyam import bamyam_router
 from app.route.index import index_router
 
 app = FastAPI()
@@ -12,6 +13,7 @@ app.mount('/static', StaticFiles(directory='views/static'), name='static')
 
 # 외부 route 파일 불러오기
 app.include_router(index_router)
+app.include_router(bamyam_router, prefix='/bamyam')
 
 
 if __name__ == '__main__':
