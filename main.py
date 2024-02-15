@@ -12,7 +12,7 @@ app.mount('/static', StaticFiles(directory='views/static'), name='static')
 
 # 외부 route 파일 불러오기
 
-app.include_router(manuma159_router, prefix='manuma159')
+app.include_router(manuma159_router, prefix='/manuma159')
 
 
 if __name__ == '__main__':
